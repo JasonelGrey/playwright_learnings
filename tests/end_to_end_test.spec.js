@@ -5,7 +5,7 @@ import { Checkout } from "../page-objects/Checkout";
 import { LoginPage } from "../page-objects/LoginPage";
 import { RegisterPage } from "../page-objects/RegisterPage";
 import { v4 as uuidv4 } from 'uuid';
-import { DeliveryDetails } from "../page-objects/Deliverydetails";
+import { DeliveryDetails } from "../page-objects/DeliveryDetails.";
 import { userAddress } from "../data/userAddress";
 import { PaymentPage } from "../page-objects/PaymentPage";
 import { PaymentDetails } from "../data/PaymentDetails";
