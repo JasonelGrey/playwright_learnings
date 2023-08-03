@@ -1,7 +1,7 @@
 name: Plywright tests
 on:
   push:
-    branched: [ main ]
+    branches: [ main ]
   jobs:
     playwrighttests:
       runs-on: ubuntu-latest
