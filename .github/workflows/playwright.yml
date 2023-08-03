@@ -1,4 +1,4 @@
-name: Plywright tests
+name: Playwright tests
 
 on:
   push:
@@ -7,8 +7,19 @@ on:
 jobs:
   playwrighttests:
     runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.cpm/playwright:v1.36.1-focal
+      env:
+        ADMIN_USERNAME: ${{ secrets.ADMIN_USERNAME }}
+        ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-      - name: Say hello
-        run: echo hello
+      - name: Run test
+        run: |
+          echo "Start the shopping store application"
+          ./shopping-store-linux-amd64 &
+          echo "Install dependencies from lockfile"
+          npm ci
+          echo "Run playwright tests"
+          npm test:ci
