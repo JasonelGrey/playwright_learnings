@@ -22,4 +22,4 @@ jobs:
           echo "Install dependencies from lockfile"
           npm ci
           echo "Run playwright tests"
-          npm test:ci
+          npm run test:ci
