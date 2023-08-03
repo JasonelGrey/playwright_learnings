@@ -21,8 +21,6 @@ export class RegisterPage {
         await this.registerButton.click();
     }
 
-    hello = async() => {
-        console.log("Hello");
-    }
+    hello = async() => {}
 
 }
