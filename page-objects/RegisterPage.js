@@ -24,6 +24,7 @@ export class RegisterPage {
     hello = async() => {
         console.log("hello");
         console.log("hello2");
+        console.log("hello3");
     }
 
 }
