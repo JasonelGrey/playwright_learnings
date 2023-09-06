@@ -32,10 +32,7 @@ export class Checkout {
         await this.continueToCheckoutButton.waitFor();
         await this.continueToCheckoutButton.click();
         await this.page.waitForURL(/\/login/);
-        console.log("hello");
-        console.log("hello");
-        console.log("hello");
-        console.log("hello");
+
     }
 
     
