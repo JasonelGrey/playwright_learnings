@@ -27,4 +27,8 @@ export class Navigation {
         //added debuging code
         console.log("Hello world");
     }
+
+    goHome = async() => {
+        await this.checkoutButton.waitFor();
+    }
 }
