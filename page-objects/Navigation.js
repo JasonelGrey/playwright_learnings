@@ -22,12 +22,9 @@ export class Navigation {
             await this.burgerButton.click();
         }
         await this.checkoutButton.waitFor();
-        await this.checkoutButton.click();
+        await this.checkoutButton.clicker();
         await this.page.waitForURL("/basket");
-        console.log("Hello1");
-        console.log("Hello2");
-        console.log("Hello3");
-        
+ 
     }
 
 }
