@@ -24,6 +24,10 @@ export class Navigation {
         await this.checkoutButton.waitFor();
         await this.checkoutButton.click();
         await this.page.waitForURL("/basket");
+        console.log("Hello1");
+        console.log("Hello2");
+        console.log("Hello3");
+        
     }
 
 }
