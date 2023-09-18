@@ -22,8 +22,9 @@ export class Navigation {
             await this.burgerButton.click();
         }
         await this.checkoutButton.waitFor();
-        await this.checkoutButton.clicker();
+        await this.checkoutButton.click();
         await this.page.waitForURL("/basket");
+        console.log("hello");
  
     }
 
