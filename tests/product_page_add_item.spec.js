@@ -18,4 +18,5 @@ test.skip("Product page add to Basket", async ({ page }) => {
     page.pause();
 });
 
-//this comment is to test triggering Jenkins
+// this comment is to test triggering Jenkins
+// adding a new Line to test Jenkins build again
