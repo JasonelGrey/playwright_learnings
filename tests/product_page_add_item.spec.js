@@ -18,4 +18,4 @@ test.skip("Product page add to Basket", async ({ page }) => {
     page.pause();
 });
 
-//commane
+//adding comment to tigger jenkins pipeline
