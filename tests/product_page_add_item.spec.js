@@ -17,5 +17,3 @@ test.skip("Product page add to Basket", async ({ page }) => {
     await page.waitForURL("/basket");
     page.pause();
 });
-
-//adding comment to tigger jenkins pipeline
