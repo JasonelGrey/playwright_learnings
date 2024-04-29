@@ -15,4 +15,5 @@ test.skip("Product page add to Basket", async ({ page }) => {
     const checkoutLink = page.locator('.monitor-navigation >div >div:nth-child(3)');
     await checkoutLink.click();
     await page.waitForURL("/basket");
+    await page.pause();
 });
