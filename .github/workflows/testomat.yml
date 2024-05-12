@@ -32,11 +32,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          
-      - name: Run application
-        run: |
-          chmod +x ./shopping-store-linux-amd64
-          ./shopping-store-linux-amd64 &
 
       - name: Setup dependencies
         run: npm ci
@@ -45,7 +40,10 @@ jobs:
         run: npx playwright install
 
       - name: Run tests
-        run: npx playwright test --grep "${{ github.event.inputs.grep }}"
+        run: |
+          chmod +x ./shopping-store-linux-amd64
+          ./shopping-store-linux-amd64 &
+          npx playwright test --grep "${{ github.event.inputs.grep }}"
         env:
           TESTOMATIO: '${{ secrets.TESTOMATIO }}'
           TESTOMATIO_RUN: '${{ github.event.inputs.run }}'
