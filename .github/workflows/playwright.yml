@@ -12,6 +12,7 @@ jobs:
       env:
         ADMIN_USERNAME: ${{ secrets.ADMIN_USERNAME }}
         ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
+        TESTOMAT: ${{ secrets.TESTOMATIO }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
