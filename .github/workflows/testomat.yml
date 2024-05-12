@@ -1,5 +1,4 @@
 name: Testomat reporting
-
 on:
   workflow_dispatch:
     inputs:
@@ -11,30 +10,28 @@ on:
         required: false
       testomatio:
         required: false
-
 jobs:
   testomat_reporting:
     runs-on: ubuntu-latest
     container:
       image: mcr.microsoft.com/playwright:v1.36.1-jammy
+    env:
+      ADMIN_USERNAME: ${{ secrets.ADMIN_USERNAME }}
+      ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
+
     strategy:
       matrix:
         node-version: [18.x]
-
     steps:
       - uses: actions/checkout@v3
-
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-
       - name: Setup dependencies
         run: npm ci
-
       - name: Playwright browser updates
         run: npx playwright install
-
       - name: Run tests
         run: |
           chmod +x ./shopping-store-linux-amd64
@@ -43,5 +40,3 @@ jobs:
         env:
           TESTOMATIO: '${{ secrets.TESTOMATIO }}'
           TESTOMATIO_RUN: '${{ github.event.inputs.run }}'
-          ADMIN_USERNAME: '${{ secrets.ADMIN_USERNAME }}'
-          ADMIN_PASSWORD: '${{ secrets.ADMIN_PASSWORD }}'
