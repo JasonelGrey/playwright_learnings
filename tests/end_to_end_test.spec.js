@@ -11,7 +11,7 @@ import { PaymentPage } from "../page-objects/PaymentPage";
 import { PaymentDetails } from "../data/PaymentDetails";
 
 
-test("End_to_end-test", async ({ page }) => {
+test("End_to_end-test @T3f56ec4f", async ({ page }) => {
     const producstPage = new ProductsPage(page);
     await producstPage.visit();
     await producstPage.sortByCheapest();
