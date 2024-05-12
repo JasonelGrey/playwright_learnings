@@ -17,10 +17,6 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: mcr.microsoft.com/playwright:v1.36.1-jammy
-    env:
-      ADMIN_USERNAME: ${{ secrets.ADMIN_USERNAME }}
-      ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
-
     strategy:
       matrix:
         node-version: [18.x]
@@ -47,3 +43,5 @@ jobs:
         env:
           TESTOMATIO: '${{ secrets.TESTOMATIO }}'
           TESTOMATIO_RUN: '${{ github.event.inputs.run }}'
+          ADMIN_USERNAME: '${{ secrets.ADMIN_USERNAME }}'
+          ADMIN_PASSWORD: '${{ secrets.ADMIN_PASSWORD }}'
