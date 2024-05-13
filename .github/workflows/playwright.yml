@@ -25,3 +25,5 @@ jobs:
           npm ci
           echo "Run playwright tests"
           npm run test:ci
+        env:
+          TESTOMATIO: '${{ secrets.TESTOMATIO }}'
