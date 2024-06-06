@@ -1,6 +1,6 @@
 import { test } from "@playwright/test";
 import { ProductsPage } from "../page-objects/ProductsPage";
-// import { Navigation } from "../page-objects/Navigation";
+ import { Navigation } from "../page-objects/Navigation";
 import { Checkout } from "../page-objects/Checkout";
 import { LoginPage } from "../page-objects/LoginPage";
 import { RegisterPage } from "../page-objects/RegisterPage";
